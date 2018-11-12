@@ -74,7 +74,12 @@ public class Curso
 #End Region
 
 #Region "Metodos"
+    '    Codifique un método que retorne cursos por facultad, utilizando el SP codificado
+    'en el punto 1b. 
 
+    Public Shared Function RecuperarCursosFacultad(CodFacultad As Integer) As DataTable
+        Return gDatos.TraerDataTable("spConsultarCursosPorFacultad", CodFacultad)
+    End Function
 
 
 #End Region

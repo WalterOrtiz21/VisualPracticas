@@ -8,10 +8,9 @@ End Code
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Sistema Facultad</title>
 </head>
 <body>
-    <div> 
-    </div>
+   <h1>Sistema Facultad</h1>
 </body>
 </html>

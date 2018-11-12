@@ -75,8 +75,31 @@ public class Alumno
 
 #Region "Metodos"
 
-
-
+    '    Codifique un método que retorne los alumnos de un curso, utilizando el SP
+    'codificado en el punto 1c. 
+    Public Shared Function RecuperarAlumnosCurso(CodCurso As Integer) As DataTable
+        Return gDatos.TraerDataTable("spConsultarAlumnosPorCurso", CodCurso)
+    End Function
+    '    Codifique un método que retorne un alumno a partir de su código, utilizando el
+    'SP codificado en el punto 1D. Retorna un objeto de tipo Alumno. 
+    Public Function RecuperarAlumnoPorCodigo(CodAlumno As Integer) As Alumno
+        Dim dtDatos As New DataTable
+        dtDatos = gDatos.TraerDataTable("spConsultarAlumnoPorCodigo", CodAlumno)
+        If dtDatos.Rows.Count > 0 Then
+            Dim vAlumno As New Alumno
+            With vAlumno
+                .pCodAlumno = dtDatos.Rows(0).Item("CodAlumno")
+                .pTelefono = dtDatos.Rows(0).Item("Telefono")
+                .pDireccion = dtDatos.Rows(0).Item("Direccion")
+                .pEmail = dtDatos.Rows(0).Item("Email")
+                .pFechaNacimiento = dtDatos.Rows(0).Item("FechaNacimiento")
+                .pNombreApellido = dtDatos.Rows(0).Item("NombreApellido")
+            End With
+            Return vAlumno
+        Else
+            Return Nothing
+        End If
+    End Function
 
 #End Region
 End class
