@@ -15,7 +15,8 @@ End Code
 <body>
     <div class="container">
         <h1>Facultades</h1>
-        <select name="cboFacultades" id="cboFacultades" onchange="CargarCursos()">
+        <select name="cboFacultades" id="cboFacultades" class="form-control" onchange="CargarCursos()">
+            <option value="#"> ---Seleccionar---</option>
             @For Each row In ViewData("Facultades")
                 @<option value="@row("CodFacultad")">@row("Descripcion")</option>
             Next
@@ -62,7 +63,12 @@ End Code
                 var datos = jQuery.parseJSON(msg);
                 var row = "";
                 for (i = 0; i < datos.length; i++) {
-                    row += "<tr><td>Seleccionar</td><td>" + datos[i].CodCurso + "</td><td>" + datos[i].Descripcion + "</td><td>" + datos[i].CodModalidad + "</td><td>" + datos[i].CodFacultad + "</td><td>" + datos[i].FechaInicio + "</td><td>" + datos[i].FechaFin + "</td></tr>";
+                    row += "<tr><td> <a href='../../Curso/AlumnosPorCurso/'>Seleccionar</a> <td><td>" + datos[i].CodCurso +
+                        "</td><td>" + datos[i].Descripcion +
+                        "</td><td>" + datos[i].CodModalidad +
+                        "</td><td>" + datos[i].CodFacultad +
+                        "</td><td>" + datos[i].FechaInicio +
+                        "</td><td>" + datos[i].FechaFin + "</td></tr>";
                 }
                 $("#planilla").html(row);
             },

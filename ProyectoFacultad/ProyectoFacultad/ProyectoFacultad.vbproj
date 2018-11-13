@@ -123,6 +123,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="Controllers\AlumnoController.vb" />
+    <Compile Include="Controllers\CursoController.vb" />
     <Compile Include="Controllers\FacultadController.vb" />
     <Compile Include="Controllers\HomeController.vb" />
     <Compile Include="Global.asax.vb">
@@ -170,6 +172,8 @@
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.vbhtml" />
     <Content Include="Views\Facultad\Index.vbhtml" />
+    <Content Include="Views\Curso\AlumnosPorCurso.vbhtml" />
+    <Content Include="Views\Alumno\DatosAlumno.vbhtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
