@@ -26,13 +26,22 @@ End Code
                         </tr>
                     </thead>
                     <tbody>
-                        @For Each item In ViewData("alumnos_curso")
+                            @For Each row In ViewData("alumnos_curso")
+                                @<tr>
+                                    <td><a href='../../Alumno/DatosAlumno/@row("CodAlumno")' class="btn btn-info">Seleccionar</a></td>
+                                    <td>@row("CodAlumno")</td>
+                                    <td>@row("NombreApellido")</td>
+                                </tr>
+                            Next
+                                                  
+                       
+                        @*@For Each item In ViewData("alumnos_curso")
                             @<tr>
                                 <td><a href="../../Alumno/DatosAlumno/@item("CodAlumno")" class="btn btn-info">Seleccionar</a></td>
                                 <td>@item("CodAlumno")</td>
                                 <td>@item("NombreApellido")</td>
                             </tr>
-                        Next
+                        Next*@
 
 
                     </tbody>

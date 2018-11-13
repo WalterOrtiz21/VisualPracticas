@@ -6,7 +6,7 @@ Namespace Controllers
 
         ' GET: Home
         Function Index() As ActionResult
-            Util.inicializaSesion("M201-03", "Facu", "sa", "@lumno123")
+            Util.inicializaSesion("USER\SQLEXPRESS", "Facu", "sa", "factranus98")
             Return View()
         End Function
     End Class

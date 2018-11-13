@@ -78,7 +78,7 @@ public class Curso
     'en el punto 1b. 
 
     Public Shared Function RecuperarCursosFacultad(CodFacultad As Integer) As DataTable
-        Return gDatos.TraerDataTable("spConsultarCursosPorFacultad", CodFacultad)
+        Return gDatos.TraerDataTable("spConsultaCursosPorFacultad", CodFacultad)
     End Function
 
 
